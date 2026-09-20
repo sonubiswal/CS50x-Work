@@ -1,0 +1,24 @@
+{% extends "layout.html" %}
+{% block title %}Edit Session{% endblock %}
+{% block main %}
+<h2>Edit Session</h2>
+<form action="/edit/{{ s.id }}" method="post">
+    <div>
+        <label for="subject">Subject</label>
+        <input autocomplete="off" autofocus name="subject" id="subject" placeholder="Subject" type="text" value="{{ s.subject }}">
+    </div>
+    <div>
+        <label for="minutes">Minutes</label>
+        <input name="minutes" id="minutes" placeholder="Minutes" type="number" value="{{ s.minutes }}">
+    </div>
+    <div>
+        <label for="studied_on">Date</label>
+        <input name="studied_on" id="studied_on" type="date" value="{{ s.studied_on }}">
+    </div>
+    <div>
+        <label for="notes">Notes</label>
+        <textarea name="notes" id="notes" rows="3">{{ s.notes }}</textarea>
+    </div>
+    <button type="submit">Save Changes</button>
+</form>
+{% endblock %}

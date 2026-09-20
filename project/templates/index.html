@@ -1,0 +1,36 @@
+{% extends "layout.html" %}
+{% block title %}Home{% endblock %}
+{% block main %}
+<h2>Study Sessions</h2>
+{% if sessions %}
+<table>
+    <thead>
+        <tr>
+            <th>Subject</th>
+            <th>Minutes</th>
+            <th>Date</th>
+            <th>Notes</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for s in sessions %}
+        <tr>
+            <td>{{ s.subject|title }}</td>
+            <td>{{ s.minutes }}</td>
+            <td>{{ s.studied_on }}</td>
+            <td>{{ s.notes }}</td>
+            <td>
+                <a href="/edit/{{ s.id }}" class="link-button">Edit</a>
+                <form action="/delete/{{ s.id }}" method="post" class="delete-form">
+                    <button class="link-button" type="submit">Delete</button>
+                </form>
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% else %}
+<p>You haven't logged any study sessions yet. <a href="/add">Add one now!</a></p>
+{% endif %}
+{% endblock %}

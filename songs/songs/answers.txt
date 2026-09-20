@@ -1,0 +1,1 @@
+I found it interesting to see how database queries can easily break down music characteristics like energy and danceability. It was surprising to see how many top songs feature other artists or have a high audio energy level. Using subqueries made it much cleaner to link specific artists like Post Malone to their songs without manually searching for IDs.

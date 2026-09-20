@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StudyTrack | {% block title %}{% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+
+<header>
+    <a href="/" class="logo">StudyTrack</a>
+    <nav>
+        {% if session.get("user_id") %}
+            <a href="/">Home</a>
+            <a href="/add">Add</a>
+            <a href="/dashboard">Dashboard</a>
+            <a href="/logout">Log out</a>
+        {% else %}
+            <a href="/login">Log in</a>
+            <a href="/register">Register</a>
+        {% endif %}
+    </nav>
+</header>
+
+<main>
+    {# flash messages #}
+    {% for m in get_flashed_messages() %}
+        <p class="flash">{{ m }}</p>
+    {% endfor %}
+
+    {% block main %}{% endblock %}
+</main>
+
+<script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

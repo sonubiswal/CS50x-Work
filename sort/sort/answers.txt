@@ -1,0 +1,11 @@
+sort1 uses: Bubble Sort
+
+How do you know?: It took the longest time on the reversed list (over 6 seconds).
+
+sort2 uses: Merge Sort
+
+How do you know?: It was the fastest overall on the reversed list (under 1 second).
+
+sort3 uses: Selection Sort
+
+How do you know?: It took a moderate amount of time (around 3 seconds).

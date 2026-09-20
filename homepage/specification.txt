@@ -1,0 +1,1 @@
+I used JavaScript to trigger a welcome alert pop-up when the surprise button is clicked, and I integrated Bootstrap's CDN styling to format the interactive button components across my pages.

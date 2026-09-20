@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+        <link href="styles.css" rel="stylesheet">
+        <title>Trivia!</title>
+        <script>
+            // Wait until the page is fully loaded
+            document.addEventListener('DOMContentLoaded', function() {
+
+                // ---------- Part 1: Multiple Choice ----------
+                document.querySelector('#check-mc').addEventListener('click', function() {
+                    // Correct answer is "Paris"
+                    if (document.querySelector('input[name="q1"]:checked') &&
+                        document.querySelector('input[name="q1"]:checked').value === 'paris') {
+                        document.querySelector('#feedback-mc').innerHTML = 'Correct!';
+                        document.querySelector('#feedback-mc').style.color = 'green';
+                    } else {
+                        document.querySelector('#feedback-mc').innerHTML = 'Incorrect';
+                        document.querySelector('#feedback-mc').style.color = 'red';
+                    }
+                });
+
+                // ---------- Part 2: Free Response ----------
+                document.querySelector('#check-fr').addEventListener('click', function() {
+                    // Correct answer is "Shakespeare" (case-insensitive)
+                    let answer = document.querySelector('#q2').value.trim().toLowerCase();
+                    if (answer === 'shakespeare') {
+                        document.querySelector('#feedback-fr').innerHTML = 'Correct!';
+                        document.querySelector('#feedback-fr').style.color = 'green';
+                    } else {
+                        document.querySelector('#feedback-fr').innerHTML = 'Incorrect';
+                        document.querySelector('#feedback-fr').style.color = 'red';
+                    }
+                });
+
+            });
+        </script>
+    </head>
+    <body>
+        <div class="header">
+            <h1>Trivia!</h1>
+        </div>
+
+        <div class="container">
+            <div class="section">
+                <h2>Part 1: Multiple Choice</h2>
+                <hr>
+
+                <h3>What is the capital of France?</h3>
+
+                <input type="radio" name="q1" id="q1-paris" value="paris">
+                <label for="q1-paris">Paris</label><br>
+
+                <input type="radio" name="q1" id="q1-london" value="london">
+                <label for="q1-london">London</label><br>
+
+                <input type="radio" name="q1" id="q1-berlin" value="berlin">
+                <label for="q1-berlin">Berlin</label><br>
+
+                <button id="check-mc">Check Answer</button>
+                <p id="feedback-mc"></p>
+            </div>
+
+            <div class="section">
+                <h2>Part 2: Free Response</h2>
+                <hr>
+
+                <h3>Who wrote the play "Hamlet"?</h3>
+
+                <input type="text" id="q2" placeholder="Your answer">
+                <button id="check-fr">Check Answer</button>
+                <p id="feedback-fr"></p>
+            </div>
+        </div>
+    </body>
+</html>

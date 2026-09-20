@@ -1,0 +1,24 @@
+{% extends "layout.html" %}
+{% block title %}Add Session{% endblock %}
+{% block main %}
+<h2>Add a Session</h2>
+<form action="/add" method="post">
+    <div>
+        <label for="subject">Subject</label>
+        <input autocomplete="off" autofocus name="subject" id="subject" placeholder="Subject" type="text">
+    </div>
+    <div>
+        <label for="minutes">Minutes</label>
+        <input name="minutes" id="minutes" placeholder="Minutes" type="number">
+    </div>
+    <div>
+        <label for="studied_on">Date</label>
+        <input name="studied_on" id="studied_on" type="date" value="{{ today }}">
+    </div>
+    <div>
+        <label for="notes">Notes</label>
+        <textarea name="notes" id="notes" rows="3"></textarea>
+    </div>
+    <button type="submit">Add Session</button>
+</form>
+{% endblock %}

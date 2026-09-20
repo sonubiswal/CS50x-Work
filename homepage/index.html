@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Home Page</title>
+    <!-- Core Bootstrap CDN Links -->
+    <link href="https://jsdelivr.net" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav>
+        <a href="index.html">Home</a> |
+        <a href="about.html">About Me</a> |
+        <a href="hobbies.html">Hobbies</a> |
+        <a href="contact.html">Contact</a>
+    </nav>
+    <main>
+        <h1>Welcome to My Website!</h1>
+        <p>This is my personal workspace built for CS50x Problem Set 8.</p>
+        <button id="welcomeBtn" class="btn btn-primary m-3">Click for a Surprise!</button>
+    </main>
+
+    <script>
+        document.getElementById('welcomeBtn').addEventListener('click', function() {
+            alert('Thank you for visiting my site!');
+        });
+    </script>
+</body>
+</html>

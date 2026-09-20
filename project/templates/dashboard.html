@@ -1,0 +1,29 @@
+{% extends "layout.html" %}
+{% block title %}Dashboard{% endblock %}
+{% block main %}
+<h2>Dashboard</h2>
+{% if rows %}
+<table>
+    <thead>
+        <tr>
+            <th>Subject</th>
+            <th>Total Minutes</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for r in rows %}
+        <tr>
+            <td>{{ r.subject|title }}</td>
+            <td>{{ r.total }}</td>
+        </tr>
+        {% endfor %}
+        <tr>
+            <td><strong>Grand Total</strong></td>
+            <td><strong>{{ grand_total }}</strong></td>
+        </tr>
+    </tbody>
+</table>
+{% else %}
+<p>No study data available yet. <a href="/add">Add a session to get started.</a></p>
+{% endif %}
+{% endblock %}

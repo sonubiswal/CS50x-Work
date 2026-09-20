@@ -1,0 +1,33 @@
+# Compiled binaries
+*.o
+*.out
+*.exe
+*.class
+*.dSYM/
+
+# Python cache
+__pycache__/
+*.pyc
+
+# Virtual environments
+venv/
+env/
+.venv/
+
+# CS50 build files
+*.d
+
+# Node modules
+node_modules/
+
+# Databases (uncomment if you don't want to track)
+# *.db
+# *.sqlite
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Editor
+.vscode/
+.idea/
